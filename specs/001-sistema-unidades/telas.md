@@ -22,7 +22,7 @@ Itens da crítica de conjunto (C01 a C07, C09, C10, C44) valem para todas as tel
 | 10 | Central de leads (quadro) | Rede e call center | `10-admin-leads-kanban` | C23 C24 |  |
 | 11 | Central de leads (lista) | Rede e call center | `11-admin-leads-lista` | C24 |  |
 | 12 | Detalhe do lead | Rede e call center | `12-admin-lead-detalhe` | C25 |  |
-| 13 | Relatórios | Rede | `13-admin-relatorios` | C26 |  |
+| 13 | Relatórios da rede (hub, redesenhada na rodada 5) | Rede | `13-admin-relatorios` | C26; spec 005 US1, US2 |  |
 | 14 | Relatórios inteligentes | Rede | `14-admin-relatorios-inteligentes` | nova (P1) |  |
 | 15 | Suporte | Rede e franqueado | `15-admin-suporte` | C27 |  |
 | 16 | Usuários e perfis | Rede | `16-admin-usuarios-perfis` | C28 C29 | US20 |
@@ -107,6 +107,51 @@ Critério: desenhar primeiro as telas de maior impacto da fase 1 e as que explic
 - Quiz: Q01, Q04, Q05, Q10, Q13 a Q17 (fase 2).
 - Inteligência: I03, I06, I07 (fases 3 e 4; fontes pagas desligadas por decisão do Osmar; I07 depende do D11).
 - Tracking: T01, T03, T06, T08 a T10, T12 a T15. O acesso da rede ao GA4 e ao Search Console da unidade com domínio próprio (T10) está resumido nas telas 31 e 57.
+
+### Rodada 5: hub de relatórios da rede (spec 005, 21/11/2026)
+
+| # | Tela | Perfis | Arquivo | Spec 005 | Fase |
+|---|---|---|---|---|---|
+| 13 | Visão executiva (hub) | Rede | `13-admin-relatorios` | US1, US2, US12 | P1 |
+| 90 | Aquisição e campanhas | Rede | `90-admin-relatorios-campanhas` | US3 | P1 |
+| 91 | Leads e funil | Rede | `91-admin-relatorios-leads-funil` | US4 | P1 |
+| 92 | Atendimento do franqueado | Rede | `92-admin-relatorios-atendimento` | US5 | P1 |
+| 93 | Quiz, landings e tráfego | Rede | `93-admin-relatorios-quiz-landings` | US6 | P1 |
+| 94 | SEO local, Google e avaliações | Rede | `94-admin-relatorios-seo-avaliacoes` | US7 | P1 |
+| 95 | Área do cliente | Rede | `95-admin-relatorios-area-cliente` | US8 | P2 |
+| 96 | Unidades e regiões | Rede | `96-admin-relatorios-unidades` | US9 | P1 |
+| 97 | Relatório da unidade (`?unidade=<slug>`) | Rede | `97-admin-relatorios-unidade` | US9 | P1 |
+| 97f | Relatório da minha unidade | Franqueado (só a própria) | `97-franqueado-relatorio-unidade` | US9a | P1 |
+| 89 | Cadastro de metas e regras de alerta | Rede | `89-admin-relatorios-metas-regras` | US10 | P1 |
+| 98 | Metas, previsão e alertas | Rede | `98-admin-relatorios-metas-alertas` | US10 | P1 |
+| 99 | Exportar e agendar envio | Rede | `99-admin-relatorios-exportar` | US11 | P1 |
+
+Abas no topo de todas as telas do hub levam às seções; filtro global com busca e seleção de várias unidades (no protótipo os números não mudam e a tela avisa); CSV real gerado no navegador a partir da tabela principal, PDF pela impressão; tabelas ordenáveis; mapa com troca de métrica na 96. Gerador: `gerador/s12.py` com dados em `gerador/rel_dados.py` (fictícios e coerentes com as telas 04, 24, 62 a 70 e 84).
+
+Rev. 2 (21/11, 18h, crítica `critica-relatorios.md`): todo nome de unidade abre a 97 daquela unidade (exemplos de cada quartil na 96); 97f no menu do franqueado; 13 abre com manchete, alertas e metas, filtros e legenda recolhidos, KPIs clicáveis e nota no Google; comparecimento com um denominador (já realizados); receita de pacotes x receita atribuída à mídia x ROAS da mídia; 96 com paginação, cabeçalho preso e cartões no celular; filtro na URL com faixa de filtro ativo; estados vazio e de API atrasada; 89 nova; 99 com confirmação e gestão dos envios; alerta de UTM; meta de 90% em 48 h na 94.
+
+### Rodada 4: avaliações do Google (spec 004, 21/11/2026)
+
+| # | Tela | Perfis | Arquivo | Spec 004 | Fase |
+|---|---|---|---|---|---|
+| 80 | Fila de avaliações | Franqueado (computador) | `80-franqueado-avaliacoes` | US1, US2, US3 | P1 |
+| 81 | Responder avaliação (sugestão da IA editável) | Franqueado (computador) | `81-franqueado-avaliacao-detalhe` | US3, US4, US5 | P1 |
+| 82 | Avaliações no celular | Franqueado (celular) | `82-mobile-avaliacoes` | US2 | P1 |
+| 83 | Responder no celular | Franqueado (celular) | `83-mobile-avaliacao-detalhe` | US3, US4 | P1 |
+| 84 | Avaliações da rede (insights) | Rede | `84-admin-avaliacoes-rede` | US5, US6 | P1 |
+| 85 | Escaladas para a rede (lista completa) | Rede | `85-admin-avaliacoes-escaladas` | US5, US6 | P1 |
+| 86 | Escalada: workspace da rede (acompanhar, assumir, devolver, publicar como rede) | Rede | `86-admin-avaliacao-escalada` | US5 | P1 |
+| 87 | Fila da unidade no casco da rede | Rede | `87-admin-avaliacoes-unidade` | US2, US5, US6 | P1 |
+
+Rev. 2 (crítica `critica-avaliacoes.md`, 21/11/2026 17h21):
+- **19**: botão principal "Ver a fila desta unidade" (87, casco da rede), secundário "Insights da rede" (84); a lista abre pelas pendentes e notas baixas (Lu M., Paula R., Rodrigo T., Fernanda S.), cada uma abre o workspace da rede (86); "Escaladas desta unidade" leva à 85 filtrada; leitura do perfil no formato "última leitura hoje às 12:40".
+- **80 e 82**: ordem padrão por urgência (saúde e notas 1 e 2 primeiro); chips Sem resposta, Nota baixa, Avisadas à rede, Respondidas e Todas são links (`?f=`); temas clicáveis (`?tema=`) com Preço, Procedimento e Sem texto; "Ler agora"; respondidas abrem a 81/83 no estado publicada. Estados: `?estado=vazia`, `desvinculado`, `falha`.
+- **81 e 83**: um registro por avaliação, escolhido pelo hash (`#r1` a `#r7`) ou `?r=`; Lu M. (nota 1, saúde) com sugestão que não cita procedimento nem reação e leva à responsável técnica; Bia F. é a avaliação só com nota. Validador ao vivo (procedimento, sessão, saúde, confirmar cliente, desconto) trava o publicar; "X de 4.096" com aviso aos 3.900 e bloqueio acima; atalhos são botões que reescrevem com estado "gerando"; "Escrever do zero"; confirmação antes de publicar nos casos escalados; rascunho salvo com hora; correção manual do tema (FR-403); rótulo associado ao campo. Estados: `?estado=gerando`, `falha`, `validador`, `limite`, `assumida`, `publicada` e `?perfil=recepcao` (só rascunho). Na 83, rolagem com 120 px no fim (`.mob.longo .rolagem.com-tab` em `estilo.css`) e `scroll-padding-bottom`, linha do tempo e "Por que esta sugestão" de volta.
+- **84**: primeiro ecrã de ação: período e "Ler agora", cinco KPIs clicáveis com meta (90% respondidas em 48 h; notas 1 e 2 em 24 h, meta 95%) e variação frente a outubro; escaladas sem resposta (sem rascunho primeiro, saúde e nota 1 na frente) com "Assumir" ou "Acompanhar" no workspace (86), "Só saúde" e "Ver todas" (85); unidades com pendências (link para a 87) e "Lembrar unidades"; temas e regiões clicáveis (85 filtrada), com os seis temas; ranking de rapidez no fim. Exportar CSV gera o arquivo. Abaixo de 760 px de cartão, escaladas e regiões viram cartões (sem tabela cortada).
+- **85 a 87**: novas (ver tabela). Estados da 87: `?estado=desvinculado`, `falha`, `vazia`.
+- **Casco do produto** (`estilo.css`): trilho grudado de altura cheia acima de 1100 px e gaveta com botão de menu no `.top` abaixo disso (o botão "Menu" da faixa da galeria some quando a tela tem o do produto). Seções da lateral em 12 px; estrelas em `#8A5800`.
+
+Menus: "Avaliações" no franqueado (Clientes e vendas) e na rede (Inteligência, contador de escaladas sem resposta); no app do franqueado, a aba "Avaliações" substitui "Página". Números calculados em `gerador/s11.py` com semente fixa (dados fictícios). Pendências: casco de celular próprio para a rede; telas 80 e 81 com `?fixo=1` abaixo de 700 px seguem o casco do computador (sem `?fixo=1` o protótipo redireciona para 82 e 83, mantendo hash e query); miolo do painel segue em largura total (decisão de layout fluido do Osmar, em vez do max-width de 1280 px sugerido na crítica); perfis só de agregados (R-FIN, R-AG) sem tela própria.
 
 ### Rodada 3b: área do cliente no computador (crítica da tela 52, 21/11/2026)
 

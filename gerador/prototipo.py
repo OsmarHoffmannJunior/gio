@@ -16,8 +16,8 @@ def perfil(k):
     if k.startswith(('c-','q-')): return 'cliente'
     if k.startswith('lp'): return 'publico'
     return 'rede'
-PAR={'lpA':'lpAm','lpB':'lpBm','lpC':'lpCm','c-inicio-d':'c-inicio','c-ofertas-d':'c-ofertas','c-pacote-d':'c-pacote','c-privacidade-d':'c-privacidade','c-perfil-d':'c-perfil','c-agendar-d':'c-horarios'}
-PARD={'lpAm':'lpA','lpBm':'lpB','lpCm':'lpC','c-inicio':'c-inicio-d','c-ofertas':'c-ofertas-d','c-pacote':'c-pacote-d','c-privacidade':'c-privacidade-d','c-perfil':'c-perfil-d','c-horarios':'c-agendar-d'}
+PAR={'lpA':'lpAm','lpB':'lpBm','lpC':'lpCm','c-inicio-d':'c-inicio','c-ofertas-d':'c-ofertas','c-pacote-d':'c-pacote','c-privacidade-d':'c-privacidade','c-perfil-d':'c-perfil','c-agendar-d':'c-horarios','f-aval':'m-aval','f-aval-det':'m-aval-det'}
+PARD={'lpAm':'lpA','lpBm':'lpB','lpCm':'lpC','c-inicio':'c-inicio-d','c-ofertas':'c-ofertas-d','c-pacote':'c-pacote-d','c-privacidade':'c-privacidade-d','c-perfil':'c-perfil-d','c-horarios':'c-agendar-d','m-aval':'f-aval','m-aval-det':'f-aval-det'}
 pngs=set()
 for f in sorted(glob.glob(f'{D}/telas/[0-9]*.html')):
     nome=os.path.basename(f)[:-5]; k=INV.get(nome,'')

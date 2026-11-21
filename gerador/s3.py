@@ -2,26 +2,7 @@ from base import *
 random.seed(11)
 def cabec(t,p,dir=''): return f'<div class="cab"><div><h1>{t}</h1><p>{p}</p></div><div class="dir">{dir}</div></div>'
 # ---------- 13 RELATÓRIOS ----------
-conv_uf=[('SP',36.7),('MG',34.0),('GO',31.2),('PR',38.4),('RS',35.0),('DF',29.8),('SC',37.2),('Demais',30.5)]
-leads_uf={'SP':1984,'MG':214,'GO':171,'PR':236,'RS':101,'DF':78,'SC':84,'Demais':118}
-media=round(sum(v*leads_uf[u] for u,v in conv_uf)/sum(leads_uf.values()),1)
-w,h=620,330; mx=45
-bars=''.join(f'<rect x="{50+k*70}" y="{h-30-(v/mx)*(h-50):.1f}" width="40" height="{(v/mx)*(h-50):.1f}" rx="6" fill="{"#b0197e" if v>=media else "#cfb0da"}"/><text x="{70+k*70}" y="{h-12}" text-anchor="middle" font-size="12" fill="#463b4e" font-family="Inter">{u}</text><text x="{70+k*70}" y="{h-36-(v/mx)*(h-50):.1f}" text-anchor="middle" font-size="12" font-weight="600" fill="#1d1424" font-family="Inter">{str(v).replace(".",",")}%</text>' for k,(u,v) in enumerate(conv_uf))
-ym=h-30-(media/mx)*(h-50)
-graf=f'<svg viewBox="0 0 {w} {h}" width="100%" height="{h}">{bars}<line x1="40" x2="{w-10}" y1="{ym:.1f}" y2="{ym:.1f}" stroke="#4c1455" stroke-dasharray="5 4"/><text x="44" y="{ym+16:.1f}" text-anchor="start" font-size="12" fill="#4c1455" font-weight="600" font-family="Inter" stroke="#fff" stroke-width="3" paint-order="stroke">média da rede {str(media).replace(".",",")}%</text></svg>'
-orig=[('Google Ads',38,'#4c1455'),('Orgânico e Google',24,'#86106b'),('Meta Ads',17,'#b0197e'),('Instagram orgânico',11,'#e5559f'),('Outros (direto, parcerias, e-mail)',10,'#cfb0da')]
-cont=cabec('Relatórios','Funil, conversão e origem. Mesmas definições do painel e da exportação.',f'{periodo()}<span class="btn">{i("mail",14)} Agendar envio</span><span class="btn p">{i("down",14)} Exportar</span>')+f'''
-<div class="tabs"><a class="on">Funil e conversão</a><a>Origem e mídia</a><a>SEO local</a><a>Páginas e variantes</a><a>Atendimento</a></div>
-<div class="g" style="grid-template-columns:1fr 1fr;margin-bottom:16px">
- <div class="card"><div class="hd"><h3>Funil da rede</h3><span class="sub" style="margin-left:auto">01 a 21/11</span></div>{funil([('Leads',2986,'100%'),('Em contato',2541,'85% dos leads'),('Agendados',1733,'58% dos leads'),('Compareceram',1071,'36% dos leads')])}</div>
- <div class="card"><div class="hd"><h3>Origem dos leads</h3><span class="sub" style="margin-left:auto">UTM, 2.986 leads</span></div>
-  <div style="display:flex;align-items:center;gap:18px">{donut([v for _,v,_ in orig],[c for *_,c in orig],tam=160,esp=22,centro='2.986',sub='leads')}
-  <div class="lista-i" style="flex:1">'''+''.join(f'<div class="it" style="padding:6px 0"><i style="width:10px;height:10px;border-radius:3px;background:{c}"></i><span style="flex:1">{r}</span><b>{v}%</b></div>' for r,v,c in orig)+f'''</div></div></div>
-</div>
-<div class="card"><div class="hd"><h3>Comparecimento sobre leads, por UF</h3><span class="sub">mesma métrica e mesmas UFs no gráfico e na tabela</span></div>
- <div class="g" style="grid-template-columns:1.3fr 1fr;align-items:start">{graf}
- <table class="t"><thead><tr><th>UF</th><th class="num">Unidades</th><th class="num">Leads</th><th class="num">Compareceram</th></tr></thead><tbody>'''+''.join(f'<tr><td>{u if u!="Demais" else "Demais 9 UFs"}</td><td class="num">{UF_CONT[u] if u!="Demais" else 12}</td><td class="num">{fmt(leads_uf[u])}</td><td class="num"><b>{str(v).replace(".",",")}%</b></td></tr>' for u,v in conv_uf)+f'''<tr><td><b>Rede</b></td><td class="num"><b>130</b></td><td class="num"><b>{fmt(sum(leads_uf.values()))}</b></td><td class="num"><b>{str(media).replace(".",",")}%</b></td></tr></tbody></table></div></div>'''
-salvar(ARQ['rel'],pagina('Relatórios',app('admin','rel',cont)))
+# A tela 13 virou o hub de relatórios da rede (spec 005) e é gerada em s12.py, junto com as subtelas 90 a 99.
 
 # ---------- 14 RELATÓRIOS INTELIGENTES ----------
 ins=[('r','trend','Leads de Goiás caíram 31% na semana','7 unidades em GO. A queda começou no dia em que a campanha de Google Ads da região pausou (17/11).','Ver campanha','alta'),

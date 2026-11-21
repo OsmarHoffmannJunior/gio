@@ -3,7 +3,7 @@ A=DEMO['altodalapa']
 # ---------- MOBILE (app do franqueado) ----------
 def status_bar(): return '<div style="height:44px;display:flex;align-items:center;padding:0 22px;font:600 15px Inter;color:var(--tinta)"><span>9:41</span><span style="margin-left:auto;display:flex;gap:6px;align-items:center"><span style="width:18px;height:10px;border:1.5px solid var(--tinta);border-radius:3px"></span></span></div>'
 def tabbar(on):
-    it=[('home','Início','f-inicio'),('inbox','Leads','m-leads'),('cal','Agenda',None),('layout','Página','f-tpl'),('more','Mais','f-notif')]
+    it=[('home','Início','f-inicio'),('inbox','Leads','m-leads'),('cal','Agenda',None),('star','Avaliações','m-aval'),('more','Mais','f-notif')]
     return '<nav class="tabbar">'+''.join(f'<a class="{"on" if k==on else ""}" href="{L(lk) if lk else "#docbiz"}" style="position:relative">{i(ic,22)}<span>{t}{" ↗" if not lk else ""}</span>{"<span style=\"position:absolute;top:0;left:50%;margin-left:6px;background:var(--magenta);color:#fff;font:600 12px Inter;border-radius:10px;padding:0 6px;line-height:18px\">9</span>" if t=="Leads" else ""}</a>' for k,(ic,t,lk) in enumerate(it))+'</nav>'
 leads=[('Mariana S.','Depilação a laser','Google Ads','há 4 min','l','Novo'),('Juliana P.','Limpeza de pele','Orgânico','há 22 min','l','Novo'),('Fernanda L.','Ultraformer','Instagram','há 1 h','l','Novo'),('Camila R.','Depilação a laser','Meta Ads','há 3 h','b','Em contato'),('Beatriz M.','Peeling','Orgânico','ontem','a','Agendado')]
 chips=[('Todos',9),('Novo',3),('Em contato',2),('Agendado',3),('Compareceu',1)]

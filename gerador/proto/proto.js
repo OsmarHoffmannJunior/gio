@@ -2,8 +2,8 @@
 (function(){
 var B=document.body, perfil=B.dataset.perfil||'', par=B.dataset.parMobile;
 var fixo=location.search.indexOf('fixo')>=0;
-if(par && !fixo && window.innerWidth<700){location.replace(par);return;}
-var pard=B.dataset.parDesktop; if(pard && !fixo && window.innerWidth>=700){location.replace(pard);return;}
+if(par && !fixo && window.innerWidth<700){location.replace(par+location.search+location.hash);return;}
+var pard=B.dataset.parDesktop; if(pard && !fixo && window.innerWidth>=700){location.replace(pard+location.search+location.hash);return;}
 function toast(t){var e=document.querySelector('.ptoast');if(!e){e=document.createElement('div');e.className='ptoast';document.body.appendChild(e);}e.textContent=t;e.classList.add('on');clearTimeout(e._t);e._t=setTimeout(function(){e.classList.remove('on')},2200);}
 var cli=(window.innerWidth>=1100)?'52-cliente-inicio-desktop.html':'46-cliente-mobile-inicio.html';
 var bar=document.createElement('div');bar.className='pbar';
@@ -16,7 +16,7 @@ if(B.classList.contains('p-mob')){ // fundo contínuo: a cor da tela de celular 
 }
 
 bar.querySelectorAll('nav a').forEach(function(a){if(a.dataset.p===perfil)a.classList.add('on');a.addEventListener('click',function(){try{localStorage.setItem('perfil-demo',a.dataset.p)}catch(e){}});});
-var mb=bar.querySelector('.pmenu'),sd=document.querySelector('.side');if(sd){mb.addEventListener('click',function(){sd.classList.toggle('aberta')});}else{mb.style.display='none';}
+var mb=bar.querySelector('.pmenu'),sd=document.querySelector('.side');if(document.querySelector('.top .menu-btn')){mb.style.display='none';sd=null;mb.remove();}else if(sd){mb.addEventListener('click',function(){sd.classList.toggle('aberta')});}else{mb.style.display='none';}
 document.addEventListener('click',function(ev){
  var t=ev.target.closest('[data-toggle],.cx,.tabs a,.sw span,.btn,a,[data-confirma]');if(!t)return;
  if(t.closest('[data-acao-propria]'))return;

@@ -3,6 +3,7 @@ import json, math, random, os
 D=os.path.dirname(os.path.abspath(__file__))+'/..'
 random.seed(21)
 IC={
+'menu':'<path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>',
 'home':'<path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>',
 'pin':'<path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>',
 'map':'<path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/>',
@@ -83,7 +84,11 @@ ARQ={ # chave de navegação -> arquivo (protótipo estático)
  'dic':'68-admin-tracking-dicionario','utm':'69-admin-tracking-utm','saude':'70-admin-tracking-saude',
  # 002 · área do cliente no computador (crítica da tela 52) e perfil no celular
  'c-ofertas-d':'71-cliente-ofertas-desktop','c-agendar-d':'72-cliente-agendar-desktop','c-pacote-d':'73-cliente-pacote-desktop','c-avaliar-d':'74-cliente-avaliar-desktop',
- 'c-privacidade-d':'75-cliente-privacidade-desktop','c-perfil-d':'76-cliente-perfil-desktop','c-unidade-d':'77-cliente-unidade-desktop','c-avisos-d':'78-cliente-avisos-desktop','c-perfil':'79-cliente-mobile-perfil'}
+ 'c-privacidade-d':'75-cliente-privacidade-desktop','c-perfil-d':'76-cliente-perfil-desktop','c-unidade-d':'77-cliente-unidade-desktop','c-avisos-d':'78-cliente-avisos-desktop','c-perfil':'79-cliente-mobile-perfil',
+ # avaliações do Google (monitoramento e resposta)
+ 'f-aval':'80-franqueado-avaliacoes','f-aval-det':'81-franqueado-avaliacao-detalhe','m-aval':'82-mobile-avaliacoes','m-aval-det':'83-mobile-avaliacao-detalhe','aval-rede':'84-admin-avaliacoes-rede',
+ 'aval-esc':'85-admin-avaliacoes-escaladas','aval-ws':'86-admin-avaliacao-escalada','aval-un':'87-admin-avaliacoes-unidade',
+ 'rel-camp':'90-admin-relatorios-campanhas','rel-funil':'91-admin-relatorios-leads-funil','rel-atend':'92-admin-relatorios-atendimento','rel-trafego':'93-admin-relatorios-quiz-landings','rel-google':'94-admin-relatorios-seo-avaliacoes','rel-cliente':'95-admin-relatorios-area-cliente','rel-unidades':'96-admin-relatorios-unidades','rel-unidade':'97-admin-relatorios-unidade','rel-metas':'98-admin-relatorios-metas-alertas','rel-export':'99-admin-relatorios-exportar','rel-config':'89-admin-relatorios-metas-regras','f-rel':'97-franqueado-relatorio-unidade'}
 def L(k): return ARQ[k]+'.html'
 SELO_TXT='Ambiente de demonstração. Números e pessoas são ilustrativos, salvo quando a fonte é citada.'
 def pagina(titulo,corpo,largura=1440,extra_css=''):
@@ -93,12 +98,12 @@ def pagina(titulo,corpo,largura=1440,extra_css=''):
 <link rel="stylesheet" href="estilo.css"><style>{bw}{extra_css}</style></head><body>{corpo}</body></html>"""
 NAV_ADMIN=[('sec','Rede'),('home','Visão geral','rede'),('pin','Unidades','unidades','130'),('shield','Aprovações','aprov','7'),
  ('sec','Relacionamento'),('inbox','Central de leads','leads','38'),('send','Campanhas','camp-aprov','4'),('flag','Mural de avisos','mural'),('help','Suporte','suporte','12'),
- ('sec','Inteligência'),('chart','Relatórios','rel'),('sparkle','Relatórios inteligentes','insights','3'),('trend','Demanda e quiz','intel'),('target','SEO local','seo'),('zap','Tracking','saude','2'),
+ ('sec','Inteligência'),('chart','Relatórios','rel'),('sparkle','Relatórios inteligentes','insights','3'),('trend','Demanda e quiz','intel'),('target','SEO local','seo'),('star','Avaliações','aval-rede','26'),('zap','Tracking','saude','2'),
  ('sec','Plataforma'),('key','Controles da rede','controles'),('layout','Templates e marca','tpl'),('file','Modelos de ficha','modelos'),('grid','Módulos','modulos'),('users','Usuários e perfis','users'),('log','Auditoria','aud'),('lock','LGPD','lgpd','4'),
  ('sec','Ajuda'),('book','Central de ajuda','ajuda')]
 NAV_FRANQ=[('sec','Minha operação'),('home','Início','f-inicio'),('pin','Minha unidade','f-unidade'),('image','Fotos','f-fotos'),('help','Perguntas frequentes','f-faq'),('layout','Página da unidade','f-tpl'),('globe','Domínio','f-dominio'),('zap','Tags e medição','f-tags'),
- ('sec','Clientes e vendas'),('inbox','Leads','leads','9'),('tag','Procedimentos','f-procs'),('send','Campanhas','f-camps'),('bell','Notificações','f-notif','3'),
- ('sec','Apoio'),('chart','Relatórios','rel'),('send','Suporte da rede','suporte','1'),('book','Central de ajuda','ajuda')]
+ ('sec','Clientes e vendas'),('inbox','Leads','leads','9'),('star','Avaliações','f-aval','4'),('tag','Procedimentos','f-procs'),('send','Campanhas','f-camps'),('bell','Notificações','f-notif','3'),
+ ('sec','Apoio'),('chart','Relatórios','f-rel'),('send','Suporte da rede','suporte','1'),('book','Central de ajuda','ajuda')]
 def side(modo,ativo,ctx=None,sem_badges=False):
     nav=NAV_ADMIN if modo=='admin' else NAV_FRANQ
     h=['<aside class="side"><a class="logo" href="'+L('rede' if modo=='admin' else 'f-inicio')+'" style="padding:0 8px 16px;min-height:0"><img src="../assets/'+('logo-gio-branco.png' if modo=='admin' else 'logo-gio.png')+'" alt="Gio"><span>'+('Portal da<br>Rede' if modo=='admin' else 'Portal do<br>Franqueado')+'</span></a>']
@@ -116,7 +121,7 @@ def side(modo,ativo,ctx=None,sem_badges=False):
     return ''.join(h)
 def selo(): return f'<span class="selo" title="{SELO_TXT}">{i("eye",13)} Ambiente de demonstração</span>'
 def topo(modo,placeholder):
-    return f"""<div class="top"><div class="busca">{i('search')}<span>{placeholder}</span><kbd>Ctrl K</kbd></div>
+    return f"""<div class="top"><button type="button" class="ib menu-btn" aria-label="Abrir menu" aria-expanded="false" onclick="var s=document.querySelector('.side');s.classList.toggle('aberta');this.setAttribute('aria-expanded',s.classList.contains('aberta'))">{i('menu')}</button><div class="busca">{i('search')}<span>{placeholder}</span><kbd>Ctrl K</kbd></div>
 <div class="acoes">{selo()}<a class="ib" href="{L('ajuda')}" title="Central de ajuda">{i('help')}</a><a class="ib" href="{L('f-notif') if modo=='franq' else L('insights')}" title="Notificações">{i('bell')}<span class="dot"></span></a></div></div>"""
 def periodo(txt='01 a 21 nov 2026'):
     """Controle de período: só nas telas em que ele filtra o conteúdo (C09), um por tela."""

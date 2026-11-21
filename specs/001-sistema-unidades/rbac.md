@@ -106,3 +106,14 @@ Aplicado das notas de impacto da 002 e da 003. Ação "dado pessoal" (D) vale ta
   - "Agência de mídia" (só Leads agr. e Relatórios).
 - Mudança num perfil vale para todos que o usam e entra na auditoria com o diff de permissões.
 - A tela mostra, para cada perfil, quantas pessoas o usam e um simulador "ver como".
+
+## Avaliações do Google (spec 004)
+| Ação | R-ADM | R-MKT | R-SEO | R-FIN | R-AG | U-FRQ | U-GER | U-REC |
+|---|---|---|---|---|---|---|---|---|
+| Ver avaliações (texto e nome exibido) | todas | todas | todas | não | não | própria unidade | própria unidade | própria unidade (se liberado) |
+| Ver agregados (nota, volume, temas) | todas | todas | todas | todas | todas | própria unidade | própria unidade | não |
+| Editar e salvar rascunho de resposta | sim | sim | sim | não | não | própria unidade | própria unidade | se liberado |
+| Publicar resposta no Google | sim | sim | sim | não | não | própria unidade | própria unidade | não |
+| Acompanhar ou assumir escalada | sim | sim | sim | não | não | não | não | não |
+| Exportar CSV | sim | sim | sim | agregado | agregado | não | não | não |
+| Ver auditoria das respostas | sim | não | não | não | não | não | não | não |

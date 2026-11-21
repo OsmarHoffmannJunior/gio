@@ -72,8 +72,8 @@ async def main():
             if w==390:
                 await pg.goto(U+'telas/39-landing-b-desktop.html'); await pg.wait_for_timeout(400)
                 testes.append((w,'landing de computador abre a versão de celular em 390', pg.url.endswith('40-landing-b-mobile.html')))
-                await pg.goto(U+'telas/04-admin-dashboard-rede.html'); await pg.click('.pbar .pmenu'); vis2=await pg.is_visible('.side')
-                testes.append((w,'botão Menu abre a navegação lateral em 390', vis2))
+                await pg.goto(U+'telas/04-admin-dashboard-rede.html'); await pg.click('.top .menu-btn'); vis2=await pg.is_visible('.side')
+                testes.append((w,'botão de menu do casco abre a navegação lateral em 390', vis2))
             await pg.goto(U+'telas/07-admin-unidade-detalhe.html'); await pg.click('.btn.p >> nth=0'); t=await pg.inner_text('.ptoast')
             testes.append((w,'botão sem tela própria mostra ação simulada', 'simulada' in t))
             await pg.close(); await ctx.close()

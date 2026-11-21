@@ -258,6 +258,12 @@ Aplicado a partir de `specs/002-area-cliente/impacto-na-001.md` e `specs/003-qui
 - Gerenciador de tags da unidade (pedido do Osmar): um único carregador da rede envia cada evento uma vez e distribui para o GA4 da marca e, se liberado, para o GA4 próprio da unidade, sem duplicar scripts; a unidade só preenche campos tipados (ID de medição, meta tag do Search Console, Ads, Meta, TikTok) que passam por aprovação.
 - Telas: rodada 3 desenha as principais telas da 002 e da 003 (ver `telas.md`).
 
+## Integração com a spec 004: avaliações do Google (rev. 3.6, 21/11/2026)
+O monitoramento e a resposta de avaliações do Google por unidade estão em `../004-avaliacoes-google/spec.md` (aprovado pelo Osmar em 21/11 16h13). Efeitos aqui: a tela 19 (US13) ganha atalho para o painel de avaliações da rede (84) e para a fila da unidade (80); a regra "o sistema não edita o perfil do Google" ganha uma exceção única, responder avaliações pela API com autorização do dono do perfil; o menu do franqueado ganha "Avaliações" e o da rede ganha "Avaliações" em Inteligência; a auditoria só da rede (US21) registra publicação, edição e assunção de respostas. Pendência: acesso da Salus às APIs do Google Business Profile.
+
+## Integração com a spec 005: hub de relatórios da rede (rev. 3.7, 21/11/2026)
+A tela 13 (US5, US8, US15) virou o hub de relatórios da rede, que junta os dados das specs 001 a 004, mídia paga, Google e metas, com filtro global por unidade, cidade, campanha e procedimento. Proposta, pesquisa com fontes e matriz fonte x métrica x spec x situação em `../005-relatorios-rede/`. Subtelas 90 a 99.
+
 ## Success Criteria
 - SC-001 130 de 130 unidades com canonical próprio e schema local no lançamento (hoje 0).
 - SC-002 Todas as unidades com coordenadas (hoje faltam 13) e pelo menos 6 fotos (hoje 70 sem foto).

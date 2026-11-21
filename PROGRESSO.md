@@ -95,3 +95,40 @@ PDF: google-chrome --headless=new --no-sandbox --no-pdf-header-footer --print-to
 - [x] 01, 02, 03: telas de acesso responsivas (classes .acesso, .acesso-form, .acesso-pg); 02 com 6 caixas fluidas numa linha a partir de 360 px, números tabulares sem quebra (.num), SMS mascarado com contador e código de recuperação, botões em largura total no celular.
 - [x] checa_layout.py: larguras 360, 390, 768, 1024, 1280, 1440, 1920, com e sem ?fixo=1; checagem nova FORM_ESTICADO (campo mais alto que o conteúdo, vão > 48 px entre campos seguidos, card de formulário com sobra > 48 px que não vem da altura da linha).
 - [x] Conferência visual: recortes dos formulários em `revisao-layout/formularios/` (390, 1024, 1440) e folhas de contato.
+
+## Rodada 4 (21/11/2026, a partir das 16h13): avaliações do Google por unidade (spec 004)
+- [x] Spec nova `specs/004-avaliacoes-google/spec.md` (coleta pela API do GBP, fila, IA de tema, sentimento e sugestão com regras de LGPD e ética, publicação, escalada para a rede, insights, permissões, auditoria só da rede). Referências na 001 (spec.md, rbac.md, telas.md).
+- [x] Telas 80 a 84 (`gerador/s11.py`), link na 19, menus do franqueado e da rede, aba no app do franqueado, pares computador e celular no protótipo, grupo na galeria.
+- [x] checa_layout.py: 0 graves em 1.176 combinações (84 telas, 7 larguras, com e sem ?fixo=1); navegação 86 páginas, 0 links quebrados, 17 testes ok. Prints em `revisao-layout/avaliacoes/` (360, 390, 1440).
+- [x] Deploy em produção 21/11 17h08 (horário de Brasília): 4f9ee5ec-f5a8-4792-a477-2138b47db888 (401 sem senha, 200 com senha, noindex).
+- [x] Crítica de design das telas 19 e 80 a 84 (`critica-avaliacoes.md`) aplicada em 21/11 a partir das 17h21 (horário de Brasília), rev. 2:
+  - 81 e 83 leem o hash (#r1 a #r7) ou ?r=; Lu M. com sugestão no padrão da US3; Bia F. como avaliação só com nota; validador ao vivo, limite de 4.096, atalhos com estado, escrever do zero, confirmação nos casos escalados, rascunho salvo, correção de tema, rótulo do campo associado; estados por ?estado= (gerando, falha, validador, limite, assumida, publicada) e ?perfil=recepcao.
+  - 83: 120 px no fim da rolagem (`.mob.longo .rolagem.com-tab` em estilo.css) e scroll-padding; rascunho e aviso acima da barra; linha do tempo e "Por que esta sugestão" de volta.
+  - 84 acionável: KPIs clicáveis com meta e variação, escaladas sem resposta e pendentes no primeiro ecrã (Assumir/Acompanhar no workspace 86, unidades na 87), temas (os seis) e regiões clicáveis (85 filtrada), ranking de rapidez no fim, CSV real, Lembrar unidades; no estreito, escaladas e regiões em cartões.
+  - Telas novas 85 (escaladas), 86 (workspace da rede) e 87 (fila da unidade no casco da rede); 19 com "Ver a fila desta unidade" (87) e "Insights da rede" (84), lista pelas pendentes (Lu, Paula, Rodrigo, Fernanda).
+  - 80 e 82: ordem por urgência, filtros e temas como links que filtram, Ler agora, respondidas com destino; estados ?estado=vazia, desvinculado, falha.
+  - Casco do produto em estilo.css: trilho grudado acima de 1100 px e gaveta com botão de menu no topo abaixo disso; o protótipo esconde o "Menu" da faixa quando a tela tem o botão do produto (verificação de navegação atualizada). Seções da lateral em 12 px; estrelas em #8A5800. Redirecionamento computador/celular do protótipo agora mantém query e hash.
+  - Spec 004 rev. 2 (US7, tabela de estados e copy, FR-411, FR-412), telas.md (rodada 4, rev. 2), galeria com 85 a 87. Telas 13 e 90+ não foram tocadas (s12 não foi rodado; deploy mantém a 13 publicada às 17h08 e não sobe 90 a 99).
+  - checa_layout.py: 0 graves em 1.358 combinações (97 telas, 7 larguras, com e sem ?fixo=1); navegação: 17 de 17 testes ok, 0 links quebrados. Prints novos em `revisao-layout/avaliacoes/` (360, 390 e 1440; extras: 81 Paula, 81 validador, 83 Rodrigo).
+  - Deploy em produção 21/11 18h06 (horário de Brasília): 9c4b0cb9-1c61-422f-b97c-4af8f61e3ebc (401 sem senha e com senha errada, 200 com senha em 19 e 80 a 87, noindex, robots 200). Telas 90 a 99 fora do envio; 13 com o mesmo arquivo da publicação das 17h08.
+- [ ] Push no GitHub só depois da crítica aplicada (pedido do Osmar 16h16).
+- [ ] Pendência externa: a Salus pedir acesso às Business Profile APIs do Google e as unidades vincularem os perfis.
+
+## Rodada 5 (21/11/2026, a partir das 16h40): hub de relatórios da rede (spec 005)
+- [x] Pesquisa com fontes (plataformas de franquia, benchmarks de mídia, funil de clínica estética, velocidade de atendimento, avaliações, APIs): `specs/005-relatorios-rede/pesquisa.md`.
+- [x] Spec `specs/005-relatorios-rede/spec.md` (12 histórias, requisitos, escopo por perfil, 11 decisões em aberto) e matriz `matriz.md` (54 métricas: 35 já capturadas, 12 por integração, 6 dependem da Salus, 1 fase 2). Referência na 001 (rev. 3.7) e na telas.md (rodada 5).
+- [x] Tela 13 redesenhada como hub e subtelas 90 a 99 (`gerador/s12.py`, dados em `gerador/rel_dados.py`); a tela 13 saiu do s3.py; chaves novas no ARQ do base.py; grupo novo na galeria.
+- [x] checa_layout.py: 0 graves em 1.316 combinações (94 telas, 7 larguras, com e sem ?fixo=1); navegação: 17 de 17 testes ok. Prints em `revisao-layout/relatorios/` (390 e 1440).
+- [x] Crítica de design das telas 13 e 90 a 99 (`critica-relatorios.md`) aplicada em 21/11 a partir das 17h45 (horário de Brasília), rev. 2 da spec 005:
+  - Todo nome de unidade (13, 92, mapa, dispersão e as 130 linhas da 96) abre a 97 daquela unidade por `?unidade=<slug>`; exemplos de cada quartil na 96; na 97, "Trocar unidade" abre a busca das 130 e "Voltar para Unidades e regiões" leva à 96; slug inexistente mostra "Unidade não encontrada".
+  - Decisão do Osmar (17h41): franqueado só vê a própria unidade. Tela nova 97-franqueado (`97-franqueado-relatorio-unidade`), no menu Apoio > Relatórios do franqueado (antes apontava para a 13), sem troca de unidade e sem nomes de outras unidades. Demais decisões em "A definir se o projeto for aprovado" na spec 005.
+  - Nomenclatura: receita de pacotes (todas as fontes) x receita atribuída à mídia (último clique em 30 dias) x ROAS da mídia (receita atribuída ÷ investimento), igual na 13 e na 90. Comparecimento com um denominador: compareceram ÷ agendamentos já realizados (rede 72%).
+  - 13 executiva: manchete (107% da meta, Goiás −31%, 26 escaladas sem resposta, UTM 3,1%), alertas e metas no primeiro ecrã, filtros e legenda recolhidos, KPIs clicáveis, nota no Google. Escaladas apontam para a 85.
+  - 96: 25 por página (10 no celular), cabeçalho preso, cartões abaixo de 640 px, estado vazio, filtro por estado e regional na URL com faixa de filtro ativo.
+  - Tela nova 89 (cadastro de metas e regras de alerta: limite, frequência, quem recebe, liga/desliga, alterações pendentes); 99 com revisão e confirmação do agendamento e gestão dos envios (pausar, retomar, enviar agora, excluir com confirmação); alerta de UTM na 13 e na 98; meta de 90% em 48 h na 94 e na 89; avisos de API atrasada (Meta Ads na 90, perfil do Google na 94).
+  - Avaliações coerentes com a frente da spec 004 (95 escaladas, 26 sem resposta).
+  - checa_layout.py: 0 graves (relatório geral 1.386 combinações, 99 telas, 7 larguras, com e sem ?fixo=1; rodada dirigida às 13 telas do hub mais 24 e 80). verifica_prototipo.py: 101 páginas, 0 links quebrados, 0 erros, 17 de 17 testes ok. Prints em `revisao-layout/relatorios/` (390 e 1440 de 13, 89 a 99 e 97-franqueado; 360 de 13, 96 e 97; 97 de uma unidade por quartil; 97 com slug inexistente; 96 com ?uf=GO).
+  - Deploy em produção 21/11 18h53 (horário de Brasília): 698231a2-279b-463b-ad0f-a24e9fb4d4c2, com 13, 89 a 99 e 97-franqueado no índice; 19 e 80 a 87 com o mesmo conteúdo (só o link "Relatórios" do menu do franqueado passou a abrir a 97-franqueado). 401 sem senha e com senha errada, 200 com senha, robots 200, X-Robots-Tag noindex.
+- [ ] Push no GitHub (não autorizado nesta rodada).
+- [ ] Decisões do Osmar e da Salus: atribuição, acessos às APIs de mídia e do Google, metas, orçamento e vendas da DocBiz, motivo de perda, destinatários do envio.
+

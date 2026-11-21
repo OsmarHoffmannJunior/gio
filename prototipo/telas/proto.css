@@ -30,7 +30,7 @@ body.p-mob>*:not(.pbar):not(.ptoast){max-width:390px;margin-left:auto!important;
  body.p-desk .top .busca kbd{display:none}
  body.p-desk .cab{flex-wrap:wrap;align-items:flex-start}
  body.p-desk .cab .dir{margin-left:0;flex-wrap:wrap}
- body.p-desk [style*="grid-template-columns"]:not(.sw):not(#ag-dias):not(#ag-hor){grid-template-columns:1fr!important}
+ body.p-desk [style*="grid-template-columns"]:where(:not(.sw):not(#ag-dias):not(#ag-hor)){grid-template-columns:minmax(0,1fr)!important}
  body.p-desk #ag-dias{grid-template-columns:repeat(7,minmax(0,1fr))!important;gap:6px!important}
  body.p-desk #ag-hor{grid-template-columns:repeat(auto-fill,minmax(88px,1fr))!important}
  body.p-desk label[style*="display:flex"],body.p-desk [style*="display:flex"]:has(>.cx){flex-wrap:nowrap}
