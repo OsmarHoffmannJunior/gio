@@ -1,0 +1,32 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Verificação em duas etapas · Sistema de Unidades Gio (demonstração)</title>
+<link rel="stylesheet" href="estilo.css"><style></style></head><body><div class="acesso">
+<div class="acesso-marca" style="background:var(--grad);position:relative;overflow:hidden;color:#fff;padding:56px 64px;display:flex;flex-direction:column">
+ <div style="position:absolute;inset:0;background:url(../assets/fotos/espera.jpg) center/cover;opacity:.18;mix-blend-mode:luminosity"></div>
+ <div style="position:absolute;right:-140px;top:-140px;width:520px;height:520px;border-radius:50%;border:1px solid rgba(255,255,255,.18)"></div>
+ <img class="logo" src="../assets/logo-gio-branco.png" alt="Gio" style="height:64px;width:auto;align-self:flex-start;position:relative">
+ <div style="margin-top:auto;position:relative;max-width:620px">
+  <h1 style="font-size:42px;line-height:1.12;font-weight:600;margin:0 0 14px">Verificação em duas etapas</h1>
+  <p style="font-size:17px;max-width:540px">Obrigatória para todos os perfis com acesso a dados de clientes. Protege leads, consentimentos e a página da sua unidade.</p>
+ </div></div>
+<div class="acesso-form" style="gap:18px">
+ <div style="display:flex;align-items:center"><a class="lk" href="01-login.html"><svg class="i " viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M9 6l6 6-6 6"/></svg> Voltar</a><span style="margin-left:auto"><span class="selo" title="Ambiente de demonstração. Números e pessoas são ilustrativos, salvo quando a fonte é citada."><svg class="i " viewBox="0 0 24 24" style="width:13px;height:13px"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg> Ambiente de demonstração</span></span></div>
+ <div class="card" style="box-shadow:none">
+  <div class="ic l" style="margin-bottom:12px"><svg class="i " viewBox="0 0 24 24" style="width:16px;height:16px"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div>
+  <h2 style="font-size:22px;font-weight:600">Digite o código do aplicativo</h2>
+  <p class="muted" style="margin:4px 0 18px">Abra o autenticador cadastrado para <span class="num">renata.f@exemplo.com.br</span> e digite os 6&nbsp;números.</p>
+  <div class="otp" role="group" aria-label="Código de 6 números"><div class="">4</div><div class="">8</div><div class="">1</div><div class="at"></div><div class=""></div><div class=""></div></div>
+  <div style="display:flex;gap:8px;align-items:center;margin:16px 0 18px"><span class="cx" style="flex:none"></span> Confiar neste aparelho por 30&nbsp;dias</div>
+  <a class="btn p" href="24-franqueado-dashboard.html" style="width:100%;padding:12px">Confirmar</a>
+  <div class="alt2fa">
+   <div class="meta" style="font-weight:600;color:var(--tinta-2)">Sem acesso ao aplicativo?</div>
+   <div class="it"><span>Receber por SMS no <span class="num">(11) •••••-4821</span></span><span class="meta num">reenviar em 0:28</span></div>
+   <div class="it"><span>Usar um código de recuperação<span class="meta" style="display:block">Formato <span class="num">4F7K-92QD</span>, cada código vale uma vez</span></span><a class="lk" href="24-franqueado-dashboard.html">Usar código</a></div>
+  </div>
+ </div>
+ <div class="meta" style="font-weight:600;text-transform:uppercase;letter-spacing:.06em">Estados de erro</div>
+ <div class="g" style="grid-template-columns:1fr 1fr">
+  <div class="card" style="box-shadow:none;padding:16px"><div class="otp err p" role="group" aria-label="Código de 6 números"><div class="">4</div><div class="">8</div><div class="">1</div><div class="">9</div><div class="">0</div><div class="">2</div></div>
+   <div class="campo" style="margin-top:10px"><div class="erro"><svg class="i " viewBox="0 0 24 24" style="width:12px;height:12px"><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg> Código incorreto. Restam 2&nbsp;tentativas.</div></div></div>
+  <div class="card" style="box-shadow:none;padding:16px"><div class="aviso r" style="padding:10px"><div><svg class="i " viewBox="0 0 24 24" style="width:16px;height:16px"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div><div><b>Acesso bloqueado por <span class="num">15 min</span></b><div style="font-size:12px;margin-top:2px">5 tentativas erradas. Avisamos o admin da unidade e a rede.</div></div></div></div>
+ </div>
+</div></div></body></html>

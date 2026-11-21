@@ -1,0 +1,555 @@
+{
+ "01-login": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 24
+ },
+ "02-2fa": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 31
+ },
+ "03-primeiro-acesso-senha": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 41
+ },
+ "04-admin-dashboard-rede": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 167
+ },
+ "05-admin-unidades-tabela": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 206
+ },
+ "06-admin-unidades-mapa": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 116
+ },
+ "07-admin-unidade-detalhe": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 156
+ },
+ "08-admin-unidade-landing-pages": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 158
+ },
+ "09-admin-aprovacoes": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 93
+ },
+ "10-admin-leads-kanban": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 154
+ },
+ "11-admin-leads-lista": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 176
+ },
+ "12-admin-lead-detalhe": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 93
+ },
+ "13-admin-relatorios": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 143
+ },
+ "14-admin-relatorios-inteligentes": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 101
+ },
+ "15-admin-suporte": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 91
+ },
+ "16-admin-usuarios-perfis": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 137
+ },
+ "17-admin-auditoria": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 201
+ },
+ "18-admin-lgpd": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 116
+ },
+ "19-admin-seo-local": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 137
+ },
+ "20-admin-templates-marca": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 121
+ },
+ "21-admin-modelos-ficha": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 117
+ },
+ "22-admin-modulos": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 85
+ },
+ "23-central-ajuda": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 99
+ },
+ "24-franqueado-dashboard": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 80
+ },
+ "25-franqueado-minha-unidade": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 111
+ },
+ "26-franqueado-fotos": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 60
+ },
+ "27-franqueado-faq": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 67
+ },
+ "28-franqueado-templates": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 58
+ },
+ "29-franqueado-comparativo-ab": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 61
+ },
+ "30-franqueado-editor": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 62
+ },
+ "31-franqueado-dominio": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 74
+ },
+ "32-franqueado-unidade-nova": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 61
+ },
+ "33-franqueado-leads-primeiro-dia": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 51
+ },
+ "34-franqueado-notificacoes": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 63
+ },
+ "35-mobile-leads": {
+  "W": 390,
+  "cw": 390,
+  "bad": [],
+  "contraste": [],
+  "textos": 45
+ },
+ "36-mobile-lead": {
+  "W": 390,
+  "cw": 390,
+  "bad": [],
+  "contraste": [],
+  "textos": 23
+ },
+ "37-landing-a-desktop": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 72
+ },
+ "38-landing-a-mobile": {
+  "W": 390,
+  "cw": 390,
+  "bad": [],
+  "contraste": [],
+  "textos": 60
+ },
+ "39-landing-b-desktop": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 82
+ },
+ "40-landing-b-mobile": {
+  "W": 390,
+  "cw": 390,
+  "bad": [],
+  "contraste": [],
+  "textos": 55
+ },
+ "41-landing-c-desktop": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 82
+ },
+ "42-landing-c-mobile": {
+  "W": 390,
+  "cw": 390,
+  "bad": [],
+  "contraste": [],
+  "textos": 56
+ },
+ "43-cliente-mobile-entrar": {
+  "W": 390,
+  "cw": 390,
+  "bad": [],
+  "contraste": [],
+  "textos": 16
+ },
+ "44-cliente-mobile-dados": {
+  "W": 390,
+  "cw": 390,
+  "bad": [],
+  "contraste": [],
+  "textos": 23
+ },
+ "45-cliente-mobile-interesses": {
+  "W": 390,
+  "cw": 390,
+  "bad": [],
+  "contraste": [],
+  "textos": 26
+ },
+ "46-cliente-mobile-inicio": {
+  "W": 390,
+  "cw": 390,
+  "bad": [],
+  "contraste": [],
+  "textos": 43
+ },
+ "47-cliente-mobile-ofertas": {
+  "W": 390,
+  "cw": 390,
+  "bad": [],
+  "contraste": [],
+  "textos": 33
+ },
+ "48-cliente-mobile-agendar-horarios": {
+  "W": 390,
+  "cw": 390,
+  "bad": [],
+  "contraste": [],
+  "textos": 41
+ },
+ "49-cliente-mobile-agendar-confirmacao": {
+  "W": 390,
+  "cw": 390,
+  "bad": [],
+  "contraste": [],
+  "textos": 21
+ },
+ "50-cliente-mobile-pacote": {
+  "W": 390,
+  "cw": 390,
+  "bad": [],
+  "contraste": [],
+  "textos": 28
+ },
+ "51-cliente-mobile-privacidade": {
+  "W": 390,
+  "cw": 390,
+  "bad": [],
+  "contraste": [],
+  "textos": 30
+ },
+ "52-cliente-inicio-desktop": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 85
+ },
+ "53-franqueado-procedimentos-precos": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 105
+ },
+ "54-franqueado-promocoes": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 92
+ },
+ "55-franqueado-campanhas": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 86
+ },
+ "56-franqueado-campanha-assistente": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 80
+ },
+ "57-franqueado-tags-medicao": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 89
+ },
+ "58-admin-controles-liberacoes": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 173
+ },
+ "59-admin-mural-aviso": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 90
+ },
+ "60-admin-campanha-rede": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 78
+ },
+ "61-admin-campanhas-aprovacao": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 87
+ },
+ "62-admin-performance-campanhas": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 116
+ },
+ "63-admin-quiz-gerador": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 96
+ },
+ "64-quiz-mobile-pergunta": {
+  "W": 390,
+  "cw": 390,
+  "bad": [],
+  "contraste": [],
+  "textos": 12
+ },
+ "65-quiz-mobile-resultado": {
+  "W": 390,
+  "cw": 390,
+  "bad": [],
+  "contraste": [],
+  "textos": 17
+ },
+ "66-admin-inteligencia-demanda": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 148
+ },
+ "67-admin-inteligencia-sazonalidade": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 109
+ },
+ "68-admin-tracking-dicionario": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 138
+ },
+ "69-admin-tracking-utm": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 111
+ },
+ "70-admin-tracking-saude": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 127
+ },
+ "71-cliente-ofertas-desktop": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 48
+ },
+ "72-cliente-agendar-desktop": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 77
+ },
+ "73-cliente-pacote-desktop": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 48
+ },
+ "74-cliente-avaliar-desktop": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 50
+ },
+ "75-cliente-privacidade-desktop": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 46
+ },
+ "76-cliente-perfil-desktop": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 55
+ },
+ "77-cliente-unidade-desktop": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 41
+ },
+ "78-cliente-avisos-desktop": {
+  "W": 1440,
+  "cw": 1440,
+  "bad": [],
+  "contraste": [],
+  "textos": 36
+ },
+ "79-cliente-mobile-perfil": {
+  "W": 390,
+  "cw": 390,
+  "bad": [],
+  "contraste": [],
+  "textos": 22
+ }
+}

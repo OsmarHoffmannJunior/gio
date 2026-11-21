@@ -1,0 +1,36 @@
+# Segredos e credenciais
+.env
+.env.*
+!.env.example
+*.secret
+*secret*
+*credential*
+*.pem
+*.key
+id_rsa
+id_rsa.*
+.dev.vars
+
+# Dependências e caches
+node_modules/
+**/__pycache__/
+*.pyc
+.pytest_cache/
+.cache/
+*.egg-info/
+.wrangler/
+
+# Temporários
+*.tmp
+*.temp
+*~
+.DS_Store
+Thumbs.db
+/tmp/
+tmp/
+
+# Pacotes e artefatos pesados ou regeneráveis
+*.zip
+telas-png.zip
+revisao-layout/
+*-verificacao/

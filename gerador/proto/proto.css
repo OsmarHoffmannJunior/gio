@@ -1,0 +1,82 @@
+/* Camada do protótipo navegável: barra de demonstração, avisos e adaptação a telas estreitas. Não altera o desenho em 1440. */
+.pbar{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:10px;height:40px;padding:0 14px;background:#24082c;color:#fff;font:500 13px Inter,system-ui,sans-serif}
+.pbar .ps{display:inline-flex;align-items:center;gap:6px;font-weight:600;color:#fde9b8;white-space:nowrap}
+.pbar nav{display:flex;gap:4px;margin-left:auto;overflow-x:auto;min-width:0}
+.pbar nav a{padding:5px 10px;border-radius:8px;color:#f3eaf6;white-space:nowrap}
+.pbar nav a.on{background:#fff;color:#4c1455;font-weight:600}
+.pbar .pmenu{display:none;background:transparent;border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:8px;padding:4px 10px;font:600 13px Inter}
+.ptoast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#24082c;color:#fff;padding:10px 16px;border-radius:12px;font:500 14px Inter;z-index:200;box-shadow:0 8px 24px rgba(0,0,0,.25);max-width:90vw;opacity:0;transition:opacity .2s;pointer-events:none}
+.ptoast.on{opacity:1}
+[data-toggle],.cx,.tabs a,.sw span{cursor:pointer}
+/* telas de celular: coluna central com fundo contínuo (full-bleed), sem faixa branca */
+html.p-mob-html,body.p-mob{min-height:100vh}
+body.p-mob{width:auto!important;margin:0}
+body.p-mob>*:not(.pbar):not(.ptoast){max-width:390px;margin-left:auto!important;margin-right:auto!important}
+@media (min-width:1101px){
+ body.p-desk .app{align-items:start;position:relative}
+ body.p-desk .app::before{content:"";position:absolute;left:0;top:0;bottom:0;width:252px;background:#3a0e46;z-index:-1}
+ body.p-desk .app{position:relative;isolation:isolate}
+ body.p-desk .app.franq::before{background:#fff;border-right:1px solid var(--linha)}
+ body.p-desk .app>.side{position:sticky;top:40px;height:calc(100vh - 40px);overflow-y:auto}
+}
+@media (max-width:1100px){
+ body.p-desk{width:auto!important}
+ body.p-desk .app{width:100%!important;display:block!important}
+ body.p-desk .side{display:none}
+ body.p-desk .side.aberta{display:flex;position:fixed;top:40px;left:0;bottom:0;width:272px;z-index:90;overflow:auto}
+ body.p-desk .pbar .pmenu{display:inline-block}
+ body.p-desk .main{padding:16px}
+ body.p-desk .top .busca{max-width:none}
+ body.p-desk .top .busca kbd{display:none}
+ body.p-desk .cab{flex-wrap:wrap;align-items:flex-start}
+ body.p-desk .cab .dir{margin-left:0;flex-wrap:wrap}
+ body.p-desk [style*="grid-template-columns"]:not(.sw):not(#ag-dias):not(#ag-hor){grid-template-columns:1fr!important}
+ body.p-desk #ag-dias{grid-template-columns:repeat(7,minmax(0,1fr))!important;gap:6px!important}
+ body.p-desk #ag-hor{grid-template-columns:repeat(auto-fill,minmax(88px,1fr))!important}
+ body.p-desk label[style*="display:flex"],body.p-desk [style*="display:flex"]:has(>.cx){flex-wrap:nowrap}
+ body.p-desk [style*="width:1440px"]{width:auto!important}
+ body.p-desk [style*="1fr 560px"]>*:first-child{display:none}
+ body.p-desk [style*="padding:64px"],body.p-desk [style*="padding:56px"]{padding:24px 18px!important}
+ body.p-desk [style*="display:flex"]{flex-wrap:wrap}
+ body.p-desk .pbar,body.p-desk .pbar nav{flex-wrap:nowrap}
+ body.p-desk .card{overflow-x:auto}
+ body.p-desk .campo{display:flex!important;flex-direction:column;gap:5px;grid-row:auto!important}
+ body.p-desk [style*="overflow:hidden"]:has(>table){overflow-x:auto!important}
+ body.p-desk table.t{table-layout:auto!important;min-width:640px}
+ body.p-desk .tabs{overflow-x:auto;flex-wrap:nowrap}
+ body.p-desk svg{max-width:100%;height:auto}
+ body.p-desk .main>div[style*="display:flex"]{flex-wrap:wrap}
+}
+@media (max-width:600px){
+ .pbar .ps span{display:none}
+ .pbar{gap:6px;padding:0 8px}
+ .pbar nav a[data-p=todas]{font-size:0}
+ .pbar nav a[data-p=todas]:after{content:"Telas";font-size:13px}
+ .pbar nav a{padding:5px 7px}
+ body.p-desk .top .acoes .selo{display:none}
+ body.p-desk .chip{white-space:normal}
+ body.p-desk .passos{flex-wrap:nowrap!important}
+ body.p-desk .passo:not(.on) .trunc{display:none}
+ body.p-desk .passo{flex:none!important}
+ body.p-desk .passo.on{flex:1!important}
+ body.p-desk .top .busca{display:none}
+ body.p-desk .main [style*="repeat(4"],body.p-desk .main [style*="repeat(5"],body.p-desk .main [style*="repeat(6"]{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+
+/* área do cliente no computador: cabeçalho e trilho abaixo da barra de demonstração */
+body.p-desk .cli-top{top:40px}
+body.p-desk .cli-rail{top:104px;height:calc(100vh - 104px)}
+body.p-mob .mob.longo .tabbar{position:sticky;bottom:0}
+body.p-mob .mob{width:100%;max-width:390px}
+@media (max-width:1100px){
+ body.p-desk svg[width="100%"]{max-width:min(100%,640px);margin-left:auto;margin-right:auto;display:block}
+ /* tablet: KPIs e formulários em várias colunas quando cabe, em vez de uma coluna esticada */
+ body.p-desk .main [style*="repeat(4"],body.p-desk .main [style*="repeat(5"],body.p-desk .main [style*="repeat(6"]{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))!important}
+ body.p-desk .main [style*="grid-template-columns"]:has(>.campo){grid-template-columns:repeat(auto-fit,minmax(240px,1fr))!important;align-items:start}
+}
+@media (max-width:600px){
+ body.p-desk .main .pill{white-space:normal}
+ body.p-desk .main [style*="repeat(4"],body.p-desk .main [style*="repeat(5"],body.p-desk .main [style*="repeat(6"]{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ body.p-desk .main [style*="grid-template-columns"]:has(>.campo){grid-template-columns:minmax(0,1fr)!important}
+}
+@media (max-width:1100px){body.p-desk #agendar{max-width:560px;width:100%}}
